@@ -4,5 +4,4 @@ export const readFileName = (folderPath)=>{
  return   fs.readdirSync(folderPath).map(fileName => {
         return path.join(folderPath, fileName)
       })
-      
 }
