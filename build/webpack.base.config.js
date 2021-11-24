@@ -4,6 +4,7 @@ const ExtractTextPlugin = require('extract-text-webpack-plugin')
 const FriendlyErrorsPlugin = require('friendly-errors-webpack-plugin')
 const { VueLoaderPlugin } = require('vue-loader')
 
+// 是否为生成环境
 const isProd = process.env.NODE_ENV === 'production'
 
 module.exports = {
@@ -62,6 +63,10 @@ module.exports = {
       },
     ]
   },
+  // node处理用于加载node模块
+  node: {
+    fs: 'empty',
+},
   performance: {
     hints: false
   },
